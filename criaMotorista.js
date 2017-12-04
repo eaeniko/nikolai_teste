@@ -10,8 +10,10 @@ btnMotorista.addEventListener("click",function(event){
 	var cpf = form.inputCpf.value;
 	var ferias = form.inputFerias.value;
 	var modeloCarro = form.inputModeloCarro.value;
-	var status = form.inputStatus.value;
+	//var status = form.inputStatus.value;
 
+	
+	validaForm(nome, cpf, nascimento, modeloCarro);
 	var motoristaTr = document.createElement("tr");
 	var nomeTd = document.createElement("td");
 	var nascimentoTd = document.createElement("td");
@@ -25,7 +27,7 @@ btnMotorista.addEventListener("click",function(event){
 	cpfTd.textContent = cpf;
 	feriasTd.textContent = ferias;
 	modeloCarroTd.textContent = modeloCarro;
-	statusTd.textContent = status;
+	statusTd.textContent = validaFerias(ferias);
 
 
 	motoristaTr.appendChild(nomeTd);

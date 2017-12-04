@@ -12,21 +12,23 @@ for(var i = 0; i < clientes.length; i++) {
 
 	console.log(ferias);
 
-	if (ferias == "SIM") {
-		var $status = "Inativo";
-		tdStatus.textContent = $status;
-
-	}else if (ferias != "SIM" && ferias != "NÃO" && ferias != "NAO") {
-		
-	var $status = "verificar Ferias";
-	tdStatus.textContent = $status;
-	tdferias.classList.add('bg-danger');
-	tdStatus.classList.add('bg-danger');
-	
-	} else {
-		var $status = "Ativo";
-		tdStatus.textContent = $status;
-	}
+    validaFerias(ferias);
 	
 
+}
+function validaFerias(ferias) {
+    var status;
+    if (ferias == "SIM") {
+        $status = "Inativo";
+        status = $status;
+    } else {
+        $status = "Ativo";
+        status = $status;
+    }
+    return status;
+}
+function validaForm(nome, cpf, data, modelo){
+    if (nome === '' || cpf === '' || data === '' || modelo === '') {
+        return alert('Você não preencheu todos os campos.');
+    }
 }
